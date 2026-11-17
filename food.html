@@ -2,364 +2,81 @@
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ffffff">
-<title>খাবার ও রেস্টুরেন্ট | আমার সুনামগঞ্জ</title>
+<title>খাবার | আমার সুনামগঞ্জ</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{
- --green:#087b48;
- --dark:#173d2c;
- --light:#f5f8f5;
- --muted:#7b887f;
- --orange:#ff9d42;
-}
-body{
- font-family:"Noto Sans Bengali",Arial,sans-serif;
- background:var(--light);
- color:var(--dark);
- padding-bottom:85px;
-}
-button,input{font:inherit}
-a{text-decoration:none;color:inherit}
-
-/* Header */
-.header{
- background:white;
- padding:17px 18px 15px;
- position:sticky;
- top:0;
- z-index:10;
- box-shadow:0 2px 12px #00000008;
-}
-.header-top{
- display:flex;
- align-items:center;
- justify-content:space-between;
-}
-.brand{
- display:flex;
- align-items:center;
- gap:10px;
-}
-.logo{
- width:43px;
- height:43px;
- border-radius:14px;
- background:#e3f5e9;
- display:grid;
- place-items:center;
- font-size:24px;
-}
-.brand h1{font-size:19px;font-weight:800}
-.brand p{font-size:11px;color:var(--muted);margin-top:2px}
-.location{
- font-size:12px;
- color:var(--green);
- background:#e9f7ee;
- padding:8px 11px;
- border-radius:20px;
-}
-
-/* Search */
-.search-box{
- display:flex;
- align-items:center;
- gap:10px;
- background:#f2f5f2;
- border:1px solid #edf0ed;
- padding:13px 14px;
- border-radius:15px;
- margin-top:17px;
-}
-.search-box span{font-size:19px}
-.search-box input{
- border:0;
- outline:0;
- background:transparent;
- width:100%;
- font-size:14px;
-}
-
-/* Main */
-.container{padding:18px 16px}
-.eyebrow{
- color:var(--green);
- font-size:12px;
- font-weight:700;
- margin-bottom:8px;
-}
-.section-heading{
- display:flex;
- align-items:center;
- justify-content:space-between;
- margin-bottom:14px;
-}
-.section-heading h2{font-size:19px}
-.section-heading small{font-size:12px;color:var(--green)}
-
-/* Hero */
-.hero{
- position:relative;
- height:205px;
- border-radius:22px;
- overflow:hidden;
- margin-bottom:25px;
- background:#333;
-}
-.hero img{
- width:100%;
- height:100%;
- object-fit:cover;
- display:block;
-}
-.hero:after{
- content:"";
- position:absolute;
- inset:0;
- background:linear-gradient(90deg,#111c 0%,#1118 55%,transparent 100%);
-}
-.hero-content{
- position:absolute;
- z-index:2;
- top:50%;
- left:19px;
- transform:translateY(-50%);
- color:white;
- max-width:75%;
-}
-.hero-tag{
- display:inline-block;
- background:var(--orange);
- color:#38210c;
- padding:5px 10px;
- border-radius:20px;
- font-size:11px;
- font-weight:bold;
- margin-bottom:10px;
-}
-.hero-content h2{
- font-size:25px;
- line-height:1.4;
- margin-bottom:7px;
-}
-.hero-content p{
- font-size:12px;
- color:#f1f1f1;
- line-height:1.7;
-}
-
-/* Categories */
-.categories{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:11px;
- margin-bottom:27px;
-}
-.category{
- border:1px solid #edf0ed;
- background:white;
- border-radius:17px;
- padding:15px 5px;
- text-align:center;
- cursor:pointer;
- transition:.2s;
-}
-.category:active{transform:scale(.96)}
-.category .icon{
- width:48px;
- height:48px;
- display:grid;
- place-items:center;
- border-radius:15px;
- margin:0 auto 9px;
- font-size:26px;
- background:#edf7ef;
-}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f5f8f5;color:#193b2b;padding-bottom:85px}
+:root{--green:#087b48;--muted:#78867d}
+.header{background:white;padding:17px;position:sticky;top:0;z-index:10;box-shadow:0 2px 10px #00000008}
+.head{display:flex;justify-content:space-between;align-items:center}
+.brand{display:flex;gap:10px;align-items:center}
+.logo{background:#e5f5e9;border-radius:13px;padding:10px;font-size:23px}
+.brand h1{font-size:18px}
+.brand p{font-size:11px;color:var(--muted);margin-top:3px}
+.location{font-size:12px;background:#eaf6ed;color:var(--green);padding:9px;border-radius:20px}
+.search{margin-top:16px;background:#f2f5f2;padding:13px;border-radius:13px;display:flex;gap:9px}
+.search input{border:0;outline:0;background:transparent;width:100%;font-size:14px}
+.container{padding:17px}
+.hero{height:195px;position:relative;border-radius:20px;overflow:hidden;margin-bottom:25px;background:#333}
+.hero img{width:100%;height:100%;object-fit:cover}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000b,transparent)}
+.hero-text{position:absolute;z-index:1;top:50%;left:17px;transform:translateY(-50%);color:white}
+.hero-text span{background:#ffae51;color:#34200b;padding:5px 9px;border-radius:15px;font-size:11px}
+.hero-text h2{font-size:25px;margin:12px 0 6px}
+.hero-text p{font-size:12px}
+.heading{display:flex;justify-content:space-between;align-items:center;margin:24px 0 13px}
+.heading h2{font-size:19px}
+.heading small{color:var(--green);font-size:11px}
+.categories{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.category{background:white;border:1px solid #edf0ed;border-radius:15px;padding:13px 5px;text-align:center;cursor:pointer}
+.category .emoji{font-size:27px;margin-bottom:7px}
 .category h3{font-size:12px}
-.category.active{
- border:1.5px solid var(--green);
- background:#eff9f1;
-}
-
-/* Filter buttons */
-.filters{
- display:flex;
- gap:9px;
- overflow-x:auto;
- padding-bottom:10px;
- margin-bottom:12px;
- scrollbar-width:none;
-}
-.filters::-webkit-scrollbar{display:none}
-.filter{
- white-space:nowrap;
- border:1px solid #e7ece7;
- background:white;
- color:#526158;
- border-radius:22px;
- padding:9px 15px;
- font-size:12px;
- cursor:pointer;
-}
-.filter.active{
- background:var(--green);
- color:white;
- border-color:var(--green);
-}
-
-/* Food cards */
-.food-grid{
- display:grid;
- grid-template-columns:repeat(2,minmax(0,1fr));
- gap:13px;
-}
-.food-card{
- background:white;
- border-radius:17px;
- overflow:hidden;
- box-shadow:0 3px 13px #00000008;
-}
-.food-image{
- height:130px;
- position:relative;
- overflow:hidden;
- background:#e9eee9;
-}
-.food-image img{
- width:100%;
- height:100%;
- object-fit:cover;
- display:block;
- transition:transform .3s;
-}
-.food-card:active .food-image img{transform:scale(1.04)}
-.food-label{
- position:absolute;
- left:9px;
- top:9px;
- background:#ffffffed;
- border-radius:20px;
- padding:5px 8px;
- font-size:10px;
- font-weight:700;
-}
-.food-info{padding:11px}
+.category.active{border:1.5px solid var(--green);background:#eff8f1}
+.filters{display:flex;gap:8px;overflow-x:auto;margin-bottom:13px;scrollbar-width:none}
+.filter{white-space:nowrap;border:1px solid #e7ece7;background:white;color:#536158;padding:9px 14px;border-radius:20px;font-size:12px}
+.filter.active{background:var(--green);color:white;border-color:var(--green)}
+.food-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.food-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 10px #00000008}
+.food-image{height:120px;position:relative}
+.food-image img{width:100%;height:100%;object-fit:cover}
+.food-label{position:absolute;top:8px;left:8px;background:white;padding:5px 8px;border-radius:20px;font-size:10px}
+.food-info{padding:10px}
 .food-info h3{font-size:14px;margin-bottom:5px}
-.food-info p{
- font-size:11px;
- color:var(--muted);
- line-height:1.6;
- min-height:35px;
-}
-.food-bottom{
- display:flex;
- justify-content:space-between;
- align-items:center;
- margin-top:10px;
-}
+.food-info p{font-size:11px;color:var(--muted);line-height:1.5}
+.food-bottom{display:flex;justify-content:space-between;align-items:center;margin-top:9px}
 .food-type{font-size:10px;color:var(--green)}
-.details-btn{
- border:0;
- background:#e8f5ec;
- color:var(--green);
- border-radius:9px;
- padding:7px 10px;
- font-size:11px;
- cursor:pointer;
-}
-
-/* Restaurant banner */
-.restaurant-banner{
- background:#e8f5ec;
- border-radius:19px;
- padding:18px;
- margin:26px 0;
- display:flex;
- align-items:center;
- gap:12px;
-}
-.restaurant-icon{font-size:37px}
-.restaurant-banner h3{font-size:15px;margin-bottom:5px}
-.restaurant-banner p{
- font-size:11px;
- line-height:1.6;
- color:#64756a;
-}
-
-/* No results */
-.empty{
- display:none;
- text-align:center;
- padding:30px 10px;
- background:white;
- border-radius:16px;
- color:var(--muted);
- font-size:13px;
- line-height:1.8;
-}
-
-/* Footer */
-.footer{
- text-align:center;
- padding:20px 10px;
- color:#8b958e;
- font-size:11px;
-}
-
-/* Bottom navigation */
-.bottom-nav{
- position:fixed;
- bottom:0;
- left:0;
- right:0;
- height:70px;
- background:white;
- border-top:1px solid #edf0ed;
- display:flex;
- justify-content:space-around;
- align-items:center;
- z-index:20;
- padding-bottom:env(safe-area-inset-bottom);
-}
-.nav-item{
- display:flex;
- flex-direction:column;
- align-items:center;
- gap:4px;
- color:#8b958e;
- font-size:10px;
-}
+.details-btn{border:0;background:#e8f5ec;color:var(--green);padding:7px 9px;border-radius:8px;font-size:11px}
+.restaurant-card{background:white;border-radius:17px;overflow:hidden;margin-bottom:14px;box-shadow:0 2px 10px #00000008}
+.restaurant-cover{height:145px;position:relative}
+.restaurant-cover img{width:100%;height:100%;object-fit:cover}
+.demo-tag{position:absolute;top:10px;left:10px;background:#fff;padding:6px 9px;border-radius:20px;font-size:10px;color:#555}
+.restaurant-info{padding:13px}
+.restaurant-info h3{font-size:16px;margin-bottom:8px}
+.restaurant-info p{font-size:12px;color:var(--muted);margin:7px 0}
+.restaurant-actions{display:flex;gap:8px;margin-top:12px}
+.restaurant-actions button{flex:1;border:0;padding:10px;border-radius:10px;font-size:12px}
+.menu-btn{background:var(--green);color:white}
+.contact-btn{background:#e9f5ec;color:var(--green)}
+.notice{background:#e8f5ec;padding:17px;border-radius:16px;margin:20px 0;line-height:1.7}
+.notice h3{font-size:15px;margin-bottom:6px}
+.notice p{font-size:12px;color:#64756a}
+.empty{text-align:center;padding:25px;background:white;border-radius:15px;color:var(--muted);font-size:13px}
+.footer{text-align:center;color:#89938d;font-size:11px;padding:20px}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;height:68px;background:white;border-top:1px solid #eee;display:flex;justify-content:space-around;align-items:center;z-index:20}
+.nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;font-size:10px;color:#89938d;text-decoration:none}
 .nav-item span{font-size:21px}
 .nav-item.active{color:var(--green);font-weight:bold}
-
-/* Toast */
-.toast{
- position:fixed;
- bottom:85px;
- left:50%;
- transform:translateX(-50%);
- background:#183e2d;
- color:white;
- padding:12px 18px;
- border-radius:12px;
- font-size:12px;
- opacity:0;
- pointer-events:none;
- transition:.3s;
- z-index:50;
- width:max-content;
- max-width:90%;
-}
-.toast.show{opacity:1}
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#183e2d;color:white;padding:12px 16px;border-radius:10px;font-size:12px;display:none;z-index:50;max-width:90%;text-align:center}
 </style>
 </head>
 
 <body>
 
 <header class="header">
- <div class="header-top">
+ <div class="head">
   <div class="brand">
    <div class="logo">🍽️</div>
    <div>
@@ -369,282 +86,213 @@ a{text-decoration:none;color:inherit}
   </div>
   <div class="location">📍 সুনামগঞ্জ</div>
  </div>
-
- <div class="search-box">
-  <span>🔍</span>
-  <input id="search" type="search"
-   placeholder="পছন্দের খাবার খুঁজুন..."
-   oninput="filterFoods()">
+ <div class="search">
+  🔍
+  <input id="search" placeholder="খাবার বা রেস্টুরেন্ট খুঁজুন..." oninput="filterAll()">
  </div>
 </header>
 
 <main class="container">
 
- <!-- Hero -->
- <section class="hero">
-  <img
-   src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1000"
-   alt="Delicious pizza">
-  <div class="hero-content">
-   <span class="hero-tag">🍕 FOOD ZONE</span>
-   <h2>মজার খাবার<br>এক জায়গায়!</h2>
-   <p>সুনামগঞ্জের খাবার ও রেস্টুরেন্ট খুঁজে নিন সহজেই।</p>
-  </div>
- </section>
-
- <!-- Categories -->
- <div class="section-heading">
-  <h2>খাবারের বিভাগ</h2>
-  <small>সবগুলো দেখুন</small>
+<section class="hero">
+ <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=900" alt="Pizza">
+ <div class="hero-text">
+  <span>FOOD ZONE 🍕</span>
+  <h2>মজার খাবার<br>এক জায়গায়!</h2>
+  <p>সুনামগঞ্জের খাবার খুঁজুন সহজেই</p>
  </div>
+</section>
 
- <section class="categories">
-  <div class="category active" onclick="selectCategory('all',this)">
-   <div class="icon">🍽️</div>
-   <h3>সব খাবার</h3>
-  </div>
+<div class="heading"><h2>খাবারের বিভাগ</h2><small>সবগুলো দেখুন</small></div>
 
-  <div class="category" onclick="selectCategory('street',this)">
-   <div class="icon">🌮</div>
-   <h3>স্ট্রিট ফুড</h3>
-  </div>
-
-  <div class="category" onclick="selectCategory('fast',this)">
-   <div class="icon">🍔</div>
-   <h3>ফাস্ট ফুড</h3>
-  </div>
-
-  <div class="category" onclick="selectCategory('restaurant',this)">
-   <div class="icon">🍛</div>
-   <h3>রেস্টুরেন্ট</h3>
-  </div>
-
-  <div class="category" onclick="selectCategory('dessert',this)">
-   <div class="icon">🍰</div>
-   <h3>মিষ্টি ও ডেজার্ট</h3>
-  </div>
-
-  <div class="category" onclick="selectCategory('drinks',this)">
-   <div class="icon">🥤</div>
-   <h3>জুস ও পানীয়</h3>
-  </div>
- </section>
-
- <!-- Popular foods -->
- <div class="section-heading">
-  <h2>জনপ্রিয় খাবার</h2>
-  <small>Food Collection</small>
+<section class="categories">
+ <div class="category active" onclick="selectCategory('all',this)">
+  <div class="emoji">🍽️</div><h3>সব খাবার</h3>
  </div>
-
- <div class="filters">
-  <button class="filter active" onclick="selectFilter('all',this)">সব</button>
-  <button class="filter" onclick="selectFilter('street',this)">স্ট্রিট ফুড</button>
-  <button class="filter" onclick="selectFilter('fast',this)">ফাস্ট ফুড</button>
-  <button class="filter" onclick="selectFilter('restaurant',this)">রেস্টুরেন্ট</button>
-  <button class="filter" onclick="selectFilter('dessert',this)">ডেজার্ট</button>
-  <button class="filter" onclick="selectFilter('drinks',this)">পানীয়</button>
+ <div class="category" onclick="selectCategory('street',this)">
+  <div class="emoji">🌮</div><h3>স্ট্রিট ফুড</h3>
  </div>
-
- <section class="food-grid" id="foodGrid">
-
-  <article class="food-card" data-category="fast" data-name="পিজ্জা pizza">
-   <div class="food-image">
-    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600" alt="Pizza">
-    <span class="food-label">ফাস্ট ফুড</span>
-   </div>
-   <div class="food-info">
-    <h3>পিজ্জা</h3>
-    <p>চিজ ও মজাদার টপিংসের পিজ্জা</p>
-    <div class="food-bottom">
-     <span class="food-type">🍕 Pizza</span>
-     <button class="details-btn" onclick="showInfo()">বিস্তারিত</button>
-    </div>
-   </div>
-  </article>
-
-  <article class="food-card" data-category="restaurant" data-name="বিরিয়ানি biryani">
-   <div class="food-image">
-    <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?w=600" alt="Biryani">
-    <span class="food-label">রেস্টুরেন্ট</span>
-   </div>
-   <div class="food-info">
-    <h3>বিরিয়ানি</h3>
-    <p>সুগন্ধি চাল ও মসলার সুস্বাদু খাবার</p>
-    <div class="food-bottom">
-     <span class="food-type">🍛 Biryani</span>
-     <button class="details-btn" onclick="showInfo()">বিস্তারিত</button>
-    </div>
-   </div>
-  </article>
-
-  <article class="food-card" data-category="fast" data-name="বার্গার burger">
-   <div class="food-image">
-    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600" alt="Burger">
-    <span class="food-label">ফাস্ট ফুড</span>
-   </div>
-   <div class="food-info">
-    <h3>বার্গার</h3>
-    <p>মজাদার বার্গার ও স্ন্যাকস</p>
-    <div class="food-bottom">
-     <span class="food-type">🍔 Burger</span>
-     <button class="details-btn" onclick="showInfo()">বিস্তারিত</button>
-    </div>
-   </div>
-  </article>
-
-  <article class="food-card" data-category="street" data-name="ফুচকা চটপটি fuchka">
-   <div class="food-image">
-    <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600" alt="Street food">
-    <span class="food-label">স্ট্রিট ফুড</span>
-   </div>
-   <div class="food-info">
-    <h3>ফুচকা ও চটপটি</h3>
-    <p>মজাদার রাস্তার খাবার</p>
-    <div class="food-bottom">
-     <span class="food-type">🌮 Street Food</span>
-     <button class="details-btn" onclick="showInfo()">বিস্তারিত</button>
-    </div>
-   </div>
-  </article>
-
-  <article class="food-card" data-category="dessert" data-name="কেক মিষ্টি cake">
-   <div class="food-image">
-    <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600" alt="Cake">
-    <span class="food-label">ডেজার্ট</span>
-   </div>
-   <div class="food-info">
-    <h3>কেক ও মিষ্টি</h3>
-    <p>জন্মদিন ও বিশেষ দিনের মিষ্টান্ন</p>
-    <div class="food-bottom">
-     <span class="food-type">🍰 Dessert</span>
-     <button class="details-btn" onclick="showInfo()">বিস্তারিত</button>
-    </div>
-   </div>
-  </article>
-
-  <article class="food-card" data-category="drinks" data-name="জুস শরবত juice">
-   <div class="food-image">
-    <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=600" alt="Juice">
-    <span class="food-label">পানীয়</span>
-   </div>
-   <div class="food-info">
-    <h3>জুস ও শরবত</h3>
-    <p>ঠান্ডা ও সতেজ পানীয়</p>
-    <div class="food-bottom">
-     <span class="food-type">🥤 Drinks</span>
-     <button class="details-btn" onclick="showInfo()">বিস্তারিত</button>
-    </div>
-   </div>
-  </article>
-
- </section>
-
- <div class="empty" id="empty">
-  <div style="font-size:35px">🔎</div>
-  দুঃখিত! কোনো খাবার পাওয়া যায়নি।<br>
-  অন্য নামে খুঁজে দেখুন।
+ <div class="category" onclick="selectCategory('fast',this)">
+  <div class="emoji">🍔</div><h3>ফাস্ট ফুড</h3>
  </div>
+ <div class="category" onclick="selectCategory('restaurant',this)">
+  <div class="emoji">🍛</div><h3>রেস্টুরেন্ট</h3>
+ </div>
+ <div class="category" onclick="selectCategory('dessert',this)">
+  <div class="emoji">🍰</div><h3>মিষ্টি</h3>
+ </div>
+ <div class="category" onclick="selectCategory('drinks',this)">
+  <div class="emoji">🥤</div><h3>পানীয়</h3>
+ </div>
+</section>
 
- <!-- Restaurant owner -->
- <section class="restaurant-banner">
-  <div class="restaurant-icon">🏪</div>
-  <div>
-   <h3>আপনার কি খাবারের দোকান আছে?</h3>
-   <p>শিগগিরই দোকানের নাম, ছবি ও মেনু যুক্ত করার সুবিধা আসবে।</p>
+<div class="heading"><h2>জনপ্রিয় খাবার</h2><small>Food Collection</small></div>
+
+<div class="filters">
+ <button class="filter active" onclick="selectCategory('all',this)">সব</button>
+ <button class="filter" onclick="selectCategory('street',this)">স্ট্রিট ফুড</button>
+ <button class="filter" onclick="selectCategory('fast',this)">ফাস্ট ফুড</button>
+ <button class="filter" onclick="selectCategory('restaurant',this)">রেস্টুরেন্ট</button>
+ <button class="filter" onclick="selectCategory('dessert',this)">মিষ্টি</button>
+ <button class="filter" onclick="selectCategory('drinks',this)">পানীয়</button>
+</div>
+
+<section class="food-grid" id="foodGrid">
+
+ <article class="food-card" data-category="fast" data-name="পিজ্জা pizza">
+  <div class="food-image">
+   <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=500" alt="Pizza">
+   <span class="food-label">ফাস্ট ফুড</span>
   </div>
- </section>
+  <div class="food-info">
+   <h3>পিজ্জা</h3><p>চিজ ও মজাদার টপিংস</p>
+   <div class="food-bottom"><span class="food-type">🍕 Pizza</span><button class="details-btn" onclick="showToast()">বিস্তারিত</button></div>
+  </div>
+ </article>
 
- <div class="footer">
-  © ২০২৬ আমার সুনামগঞ্জ<br>
-  সুনামগঞ্জের মানুষের জন্য স্থানীয় ডিজিটাল সেবা ❤️
- </div>
+ <article class="food-card" data-category="restaurant" data-name="বিরিয়ানি biryani">
+  <div class="food-image">
+   <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?w=500" alt="Biryani">
+   <span class="food-label">রেস্টুরেন্ট</span>
+  </div>
+  <div class="food-info">
+   <h3>বিরিয়ানি</h3><p>সুগন্ধি চালের মজার খাবার</p>
+   <div class="food-bottom"><span class="food-type">🍛 Biryani</span><button class="details-btn" onclick="showToast()">বিস্তারিত</button></div>
+  </div>
+ </article>
+
+ <article class="food-card" data-category="fast" data-name="বার্গার burger">
+  <div class="food-image">
+   <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Burger">
+   <span class="food-label">ফাস্ট ফুড</span>
+  </div>
+  <div class="food-info">
+   <h3>বার্গার</h3><p>মজাদার বার্গার ও স্ন্যাকস</p>
+   <div class="food-bottom"><span class="food-type">🍔 Burger</span><button class="details-btn" onclick="showToast()">বিস্তারিত</button></div>
+  </div>
+ </article>
+
+ <article class="food-card" data-category="street" data-name="ফুচকা চটপটি">
+  <div class="food-image">
+   <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=500" alt="Street food">
+   <span class="food-label">স্ট্রিট ফুড</span>
+  </div>
+  <div class="food-info">
+   <h3>ফুচকা ও চটপটি</h3><p>মজাদার রাস্তার খাবার</p>
+   <div class="food-bottom"><span class="food-type">🌮 Street Food</span><button class="details-btn" onclick="showToast()">বিস্তারিত</button></div>
+  </div>
+ </article>
+
+ <article class="food-card" data-category="dessert" data-name="কেক মিষ্টি cake">
+  <div class="food-image">
+   <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500" alt="Cake">
+   <span class="food-label">মিষ্টি</span>
+  </div>
+  <div class="food-info">
+   <h3>কেক ও মিষ্টি</h3><p>মিষ্টান্ন ও ডেজার্ট</p>
+   <div class="food-bottom"><span class="food-type">🍰 Dessert</span><button class="details-btn" onclick="showToast()">বিস্তারিত</button></div>
+  </div>
+ </article>
+
+ <article class="food-card" data-category="drinks" data-name="জুস শরবত juice">
+  <div class="food-image">
+   <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=500" alt="Juice">
+   <span class="food-label">পানীয়</span>
+  </div>
+  <div class="food-info">
+   <h3>জুস ও শরবত</h3><p>ঠান্ডা ও সতেজ পানীয়</p>
+   <div class="food-bottom"><span class="food-type">🥤 Drinks</span><button class="details-btn" onclick="showToast()">বিস্তারিত</button></div>
+  </div>
+ </article>
+
+</section>
+
+<div class="heading"><h2>সুনামগঞ্জের রেস্টুরেন্ট</h2><small>Restaurant List</small></div>
+
+<div class="notice">
+ <h3>🏪 স্থানীয় রেস্টুরেন্ট খুঁজুন</h3>
+ <p>এখানে সুনামগঞ্জের বিভিন্ন এলাকার রেস্টুরেন্ট, ঠিকানা, ফোন নম্বর, মেনু ও খোলার সময় যোগ করা হবে।</p>
+</div>
+
+<section id="restaurantList">
+
+ <article class="restaurant-card" data-name="রেস্টুরেন্টের নাম">
+  <div class="restaurant-cover">
+   <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800" alt="Restaurant">
+   <span class="demo-tag">ডেমো ডিজাইন</span>
+  </div>
+  <div class="restaurant-info">
+   <h3>আপনার এলাকার রেস্টুরেন্ট</h3>
+   <p>📍 ঠিকানা: এখানে যোগ করা হবে</p>
+   <p>📞 ফোন: তথ্য যোগ করা হবে</p>
+   <p>🕒 খোলার সময়: তথ্য যোগ করা হবে</p>
+   <p>⭐ রেটিং: গ্রাহকদের মতামত অনুযায়ী যোগ হবে</p>
+   <div class="restaurant-actions">
+    <button class="menu-btn" onclick="showToast()">🍽️ মেনু দেখুন</button>
+    <button class="contact-btn" onclick="showToast()">☎️ যোগাযোগ</button>
+   </div>
+  </div>
+ </article>
+
+</section>
+
+<div class="notice">
+ <h3>🤝 দোকান মালিকদের জন্য</h3>
+ <p>আপনার রেস্টুরেন্টের নাম, ছবি, ঠিকানা, ফোন নম্বর ও মেনু এই অ্যাপে যুক্ত করার সুবিধা ভবিষ্যতে চালু করা হবে।</p>
+</div>
+
+<div class="footer">© ২০২৬ আমার সুনামগঞ্জ<br>স্থানীয় মানুষের জন্য স্থানীয় ডিজিটাল সেবা ❤️</div>
 
 </main>
 
-<!-- Bottom Navigation -->
 <nav class="bottom-nav">
- <a href="index.html" class="nav-item">
-  <span>🏠</span>হোম
- </a>
- <a href="food.html" class="nav-item active">
-  <span>🍔</span>খাবার
- </a>
- <a href="index.html" class="nav-item">
-  <span>🛍️</span>বাজার
- </a>
- <a href="index.html" class="nav-item">
-  <span>👥</span>কমিউনিটি
- </a>
- <a href="index.html" class="nav-item">
-  <span>👤</span>প্রোফাইল
- </a>
+ <a href="index.html" class="nav-item"><span>🏠</span>হোম</a>
+ <a href="food.html" class="nav-item active"><span>🍔</span>খাবার</a>
+ <a href="index.html" class="nav-item"><span>🛍️</span>বাজার</a>
+ <a href="index.html" class="nav-item"><span>👥</span>কমিউনিটি</a>
+ <a href="index.html" class="nav-item"><span>👤</span>প্রোফাইল</a>
 </nav>
 
-<div class="toast" id="toast"></div>
+<div class="toast" id="toast">এই সুবিধাটি পরবর্তী ধাপে চালু হবে।</div>
 
 <script>
-let currentCategory = "all";
+let selectedCategory="all";
 
-function selectCategory(category, element){
- currentCategory = category;
+function selectCategory(category,element){
+ selectedCategory=category;
 
- document.querySelectorAll(".category").forEach(item=>{
-  item.classList.remove("active");
+ document.querySelectorAll(".category,.filter").forEach(el=>{
+  el.classList.remove("active");
  });
  element.classList.add("active");
-
- document.querySelectorAll(".filter").forEach(item=>{
-  item.classList.remove("active");
- });
-
- filterFoods();
+ filterAll();
 }
 
-function selectFilter(category, element){
- currentCategory = category;
+function filterAll(){
+ const q=document.getElementById("search").value.toLowerCase().trim();
+ let count=0;
 
- document.querySelectorAll(".filter").forEach(item=>{
-  item.classList.remove("active");
+ document.querySelectorAll(".food-card").forEach(card=>{
+  const matchName=card.dataset.name.toLowerCase().includes(q);
+  const matchCategory=selectedCategory==="all" || card.dataset.category===selectedCategory;
+  const show=matchName && matchCategory;
+  card.style.display=show?"":"none";
+  if(show)count++;
  });
- element.classList.add("active");
 
- document.querySelectorAll(".category").forEach(item=>{
-  item.classList.remove("active");
+ const restaurants=document.querySelectorAll(".restaurant-card");
+ restaurants.forEach(card=>{
+  const show=card.dataset.name.toLowerCase().includes(q) || q==="";
+  card.style.display=show?"":"none";
  });
-
- filterFoods();
 }
 
-function filterFoods(){
- const query = document.getElementById("search").value.toLowerCase().trim();
- const cards = document.querySelectorAll(".food-card");
- let count = 0;
-
- cards.forEach(card=>{
-  const name = card.dataset.name.toLowerCase();
-  const category = card.dataset.category;
-
-  const matchesSearch = name.includes(query);
-  const matchesCategory =
-   currentCategory === "all" || category === currentCategory;
-
-  const show = matchesSearch && matchesCategory;
-  card.style.display = show ? "" : "none";
-
-  if(show) count++;
- });
-
- document.getElementById("empty").style.display =
-  count === 0 ? "block" : "none";
-}
-
-function showInfo(){
- const toast = document.getElementById("toast");
- toast.textContent = "এই খাবারের দোকান ও বিস্তারিত তথ্য শিগগিরই যোগ করা হবে।";
- toast.classList.add("show");
-
- setTimeout(()=>{
-  toast.classList.remove("show");
+function showToast(){
+ const toast=document.getElementById("toast");
+ toast.style.display="block";
+ clearTimeout(window.toastTimer);
+ window.toastTimer=setTimeout(()=>{
+  toast.style.display="none";
  },2500);
 }
 </script>
