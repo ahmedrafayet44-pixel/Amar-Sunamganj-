@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#087f5b">
+<title>আমার সুনামগঞ্জ</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+ font-family:Arial,sans-serif;
+ background:#f4f7f6;
+ color:#172b25;
+ padding-bottom:85px;
+}
+.container{max-width:500px;margin:auto}
+.header{
+ background:#087f5b;
+ color:white;
+ padding:22px 18px 25px;
+ border-radius:0 0 25px 25px;
+}
+.top{display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:22px;font-weight:bold}
+.location{font-size:12px;margin-top:7px}
+.notify{
+ background:#ffffff25;border:0;color:white;
+ padding:11px;border-radius:12px;font-size:20px
+}
+.search{
+ margin-top:22px;background:white;
+ display:flex;align-items:center;
+ border-radius:13px;padding:0 13px;height:48px;
+}
+.search input{
+ border:0;outline:0;width:100%;
+ padding:12px;font-size:14px;color:#333;
+}
+.content{padding:17px}
+.banner{
+ background:linear-gradient(120deg,#075b45,#17a77b);
+ color:white;border-radius:19px;padding:22px 17px;
+ display:flex;justify-content:space-between;
+ align-items:center;min-height:155px;
+}
+.banner h2{font-size:21px;line-height:1.5}
+.banner p{font-size:12px;margin-top:7px}
+.banner button{
+ background:white;color:#087f5b;
+ border:0;padding:10px 15px;border-radius:9px;
+ margin-top:14px;font-weight:bold;
+}
+.banner-icon{font-size:58px}
+.section{margin-top:25px}
+.heading{
+ display:flex;justify-content:space-between;
+ align-items:center;margin-bottom:14px;
+}
+.heading h3{font-size:17px}
+.heading button{
+ background:none;border:0;color:#087f5b;
+ font-size:12px;
+}
+.services{
+ display:grid;grid-template-columns:repeat(4,1fr);
+ gap:11px 9px;
+}
+.service{
+ background:white;border:1px solid #edf0ee;
+ border-radius:14px;padding:14px 3px;
+ text-align:center;cursor:pointer;
+}
+.service:active{transform:scale(.96)}
+.emoji{font-size:27px;display:block;margin-bottom:8px}
+.service p{font-size:11px;font-weight:bold}
+.features{
+ display:grid;grid-template-columns:1fr 1fr;gap:12px;
+}
+.feature{
+ background:white;border:1px solid #edf0ee;
+ border-radius:15px;padding:15px;cursor:pointer;
+}
+.feature .emoji{font-size:30px}
+.feature h4{font-size:14px;margin-top:8px}
+.feature p{font-size:11px;color:#777;margin-top:6px;line-height:1.6}
+.news{
+ background:white;border-radius:14px;
+ padding:14px;display:flex;gap:12px;
+ align-items:center;margin-bottom:10px;
+}
+.news-icon{
+ background:#e6f7ef;padding:12px;
+ border-radius:12px;font-size:25px;
+}
+.news h4{font-size:13px}
+.news p{font-size:11px;color:#777;margin-top:5px}
+.bottom{
+ position:fixed;bottom:0;left:50%;
+ transform:translateX(-50%);
+ width:100%;max-width:500px;
+ background:white;display:flex;
+ justify-content:space-around;
+ padding:11px 4px calc(11px + env(safe-area-inset-bottom));
+ box-shadow:0 -3px 15px #00000010;
+}
+.nav{
+ border:0;background:none;color:#888;
+ display:flex;flex-direction:column;
+ align-items:center;gap:5px;font-size:11px;
+}
+.nav span{font-size:21px}
+.nav.active{color:#087f5b;font-weight:bold}
+.empty{
+ display:none;grid-column:1/-1;
+ text-align:center;padding:20px;color:#777;
+}
+.toast{
+ display:none;position:fixed;bottom:90px;
+ left:50%;transform:translateX(-50%);
+ background:#222;color:white;padding:12px 17px;
+ border-radius:10px;font-size:13px;z-index:20;
+ max-width:90%;text-align:center;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header class="header">
+ <div class="top">
+  <div>
+   <div class="logo">🌿 আমার সুনামগঞ্জ</div>
+   <div class="location">📍 সুনামগঞ্জ, বাংলাদেশ</div>
+  </div>
+  <button class="notify" onclick="toast('নতুন নোটিফিকেশন নেই')">🔔</button>
+ </div>
+
+ <div class="search">
+  🔍
+  <input id="search" placeholder="কী খুঁজছেন? যেমন ডাক্তার, খাবার..."
+  oninput="searchService()">
+ </div>
+</header>
+
+<main class="content">
+
+ <div class="banner">
+  <div>
+   <h2>আপনার শহর,<br>আপনার সব সেবা ❤️</h2>
+   <p>সুনামগঞ্জের সব প্রয়োজন এক জায়গায়</p>
+   <button onclick="document.getElementById('allServices').scrollIntoView({behavior:'smooth'})">
+    সেবা দেখুন →
+   </button>
+  </div>
+  <div class="banner-icon">🏙️</div>
+ </div>
+
+ <section class="section" id="allServices">
+  <div class="heading">
+   <h3>✨ সকল সেবা</h3>
+   <button onclick="toast('আরও সেবা শিগগিরই যুক্ত হবে')">সব দেখুন →</button>
+  </div>
+
+  <div class="services" id="services">
+
+   <div class="service" data-name="খাবার রেস্টুরেন্ট ফুড">
+    <span class="emoji">🍔</span><p>খাবার</p>
+   </div>
+
+   <div class="service" data-name="বাজার মুদি কেনাকাটা">
+    <span class="emoji">🛒</span><p>অনলাইন বাজার</p>
+   </div>
+
+   <div class="service" data-name="ডাক্তার হাসপাতাল চিকিৎসা">
+    <span class="emoji">🩺</span><p>ডাক্তার</p>
+   </div>
+
+   <div class="service" data-name="অ্যাম্বুলেন্স জরুরি">
+    <span class="emoji">🚑</span><p>জরুরি সেবা</p>
+   </div>
+
+   <div class="service" data-name="চাকরি কাজ জব">
+    <span class="emoji">💼</span><p>চাকরি</p>
+   </div>
+
+   <div class="service" data-name="রক্ত রক্তদাতা">
+    <span class="emoji">🩸</span><p>রক্তদাতা</p>
+   </div>
+
+   <div class="service" data-name="কেনাবেচা দোকান">
+    <span class="emoji">🏪</span><p>কেনাবেচা</p>
+   </div>
+
+   <div class="service" data-name="মিস্ত্রি প্লাম্বার ইলেকট্রিশিয়ান">
+    <span class="emoji">🛠️</span><p>হোম সার্ভিস</p>
+   </div>
+
+   <div class="service" data-name="বাস গাড়ি পরিবহন">
+    <span class="emoji">🚌</span><p>পরিবহন</p>
+   </div>
+
+   <div class="service" data-name="হাওর পর্যটন ভ্রমণ">
+    <span class="emoji">🚤</span><p>ট্যুরিজম</p>
+   </div>
+
+   <div class="service" data-name="শিক্ষা স্কুল টিউশন">
+    <span class="emoji">📚</span><p>শিক্ষা</p>
+   </div>
+
+   <div class="service" data-name="কৃষি মাছ ধান">
+    <span class="emoji">🌾</span><p>কৃষি বাজার</p>
+   </div>
+
+   <div class="empty" id="empty">কোনো সেবা পাওয়া যায়নি।</div>
+  </div>
+ </section>
+
+ <section class="section">
+  <div class="heading"><h3>🌟 বিশেষ সুবিধা</h3></div>
+
+  <div class="features">
+   <div class="feature" onclick="toast('হাওর আপডেট শিগগিরই চালু হবে')">
+    <span class="emoji">🌊</span>
+    <h4>হাওর আপডেট</h4>
+    <p>পানি, বন্যা ও আবহাওয়ার তথ্য</p>
+   </div>
+
+   <div class="feature" onclick="toast('স্থানীয় খবর শিগগিরই চালু হবে')">
+    <span class="emoji">📰</span>
+    <h4>স্থানীয় খবর</h4>
+    <p>শহরের নতুন খবর ও ঘোষণা</p>
+   </div>
+
+   <div class="feature" onclick="toast('মানবিক সেবা শিগগিরই চালু হবে')">
+    <span class="emoji">❤️</span>
+    <h4>মানবিক সেবা</h4>
+    <p>রক্তদাতা ও অসহায় মানুষের পাশে</p>
+   </div>
+
+   <div class="feature" onclick="toast('পর্যটন সেবা শিগগিরই চালু হবে')">
+    <span class="emoji">🏞️</span>
+    <h4>ঘুরে দেখুন</h4>
+    <p>সুনামগঞ্জের দর্শনীয় স্থান</p>
+   </div>
+  </div>
+ </section>
+
+ <section class="section">
+  <div class="heading"><h3>📢 গুরুত্বপূর্ণ তথ্য</h3></div>
+
+  <div class="news">
+   <div class="news-icon">📍</div>
+   <div>
+    <h4>আপনার এলাকার তথ্য</h4>
+    <p>এলাকার প্রয়োজনীয় তথ্য ও ঘোষণা এখানে আসবে।</p>
+   </div>
+  </div>
+
+  <div class="news">
+   <div class="news-icon">🤝</div>
+   <div>
+    <h4>আপনার ব্যবসা যুক্ত করুন</h4>
+    <p>আপনার দোকান বা ব্যবসা অ্যাপে যুক্ত করুন।</p>
+   </div>
+  </div>
+ </section>
+
+</main>
+
+<nav class="bottom">
+ <button class="nav active" onclick="navClick(this,'হোম')">
+  <span>🏠</span>হোম
+ </button>
+ <button class="nav" onclick="navClick(this,'সেবা')">
+  <span>▦</span>সেবা
+ </button>
+ <button class="nav" onclick="navClick(this,'বাজার')">
+  <span>🛍️</span>বাজার
+ </button>
+ <button class="nav" onclick="navClick(this,'কমিউনিটি')">
+  <span>👥</span>কমিউনিটি
+ </button>
+ <button class="nav" onclick="navClick(this,'প্রোফাইল')">
+  <span>👤</span>প্রোফাইল
+ </button>
+</nav>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+function toast(message){
+ const box=document.getElementById('toast');
+ box.textContent=message;
+ box.style.display='block';
+ clearTimeout(window.toastTimer);
+ window.toastTimer=setTimeout(()=>{
+  box.style.display='none';
+ },2200);
+}
+
+function searchService(){
+ const value=document.getElementById('search').value.trim().toLowerCase();
+ const items=document.querySelectorAll('.service');
+ let count=0;
+
+ items.forEach(item=>{
+  const name=item.dataset.name.toLowerCase();
+  const text=item.innerText.toLowerCase();
+  const match=name.includes(value)||text.includes(value);
+  item.style.display=match?'block':'none';
+  if(match) count++;
+ });
+
+ document.getElementById('empty').style.display=count===0?'block':'none';
+}
+
+function navClick(button,name){
+ document.querySelectorAll('.nav').forEach(item=>{
+  item.classList.remove('active');
+ });
+ button.classList.add('active');
+
+ if(name!=='হোম'){
+  toast(name+' পেজ পরবর্তী ধাপে তৈরি করব');
+ }
+}
+
+document.querySelectorAll('.service').forEach(item=>{
+ item.addEventListener('click',()=>{
+  toast(item.querySelector('p').innerText+' পেজ পরবর্তী ধাপে তৈরি করব');
+ });
+});
+</script>
+
+</body>
+  </html>
